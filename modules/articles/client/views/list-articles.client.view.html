@@ -1,0 +1,64 @@
+<section ng-controller="ArticlesController" ng-init="find()">
+  <div class="page-header">
+    <h1>Books</h1>
+  </div>
+  <div class="row">
+    <!-- <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="article.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="article.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+      <p class="list-group-item-text" ng-bind="article.content"></p>
+    </a> -->
+    <div class="col-md-4 portfolio-item" ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})">
+      <a href="#">
+        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+      </a>
+      <h3>
+        <a href="#" ng-bind="article.title"></a>
+      </h3>
+      <p ng-bind="article.content"></p>
+    </div>
+
+
+
+  </div>
+  <div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
+    No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
+  </div>
+</section>
+
+<!-- Projects Row
+<div class="row">
+  <div class="col-md-4 portfolio-item" ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})">
+    <a href="#">
+      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+    </a>
+    <h3>
+      <a href="#">Project Name</a>
+    </h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+  </div>
+  <div class="col-md-4 portfolio-item">
+    <a href="#">
+      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+    </a>
+    <h3>
+      <a href="#">Project Name</a>
+    </h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+  </div>
+  <div class="col-md-4 portfolio-item">
+    <a href="#">
+      <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+    </a>
+    <h3>
+      <a href="#">Project Name</a>
+    </h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+  </div>
+</div> -->
+<!-- /.row -->
